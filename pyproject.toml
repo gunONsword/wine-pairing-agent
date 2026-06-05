@@ -1,0 +1,18 @@
+[project]
+name = "wine-pairing-agent"
+version = "0.1.0"
+description = "LangGraph AI agent that recommends wine pairings for recipes using MiniMax."
+requires-python = ">=3.11"
+dependencies = [
+  "langgraph>=1.0",
+  "langchain-openai>=1.0",
+  "pydantic>=2.0",
+]
+
+[project.scripts]
+wine-pairing-agent = "wine_pairing_agent.cli:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
