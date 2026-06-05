@@ -240,3 +240,20 @@ C:\Users\gos\project\.agents\skills
 - 更丰富的 wine knowledge base：加入产区、价格、购买链接、库存。
 - 多轮对话：让用户补充预算、偏好、是否只喝红酒或白酒。
 - 食谱检索结合：用户只说菜名时，先搜索或生成 recipe，再做 wine pairing。
+
+## 分支工作流
+
+当前仓库使用两个主要分支：
+
+- `main`：稳定分支，用于保存确认过的版本。
+- `develop`：开发分支，日常功能开发、文档更新和实验性修改默认推送到这里。
+
+推荐流程：
+
+```text
+日常开发 -> push 到 develop
+确认稳定 -> 询问是否合并到 main
+得到确认 -> merge develop 到 main
+```
+
+以后如果需要把 `develop` 合并到 `main`，需要先确认，不会默认直接合并。
