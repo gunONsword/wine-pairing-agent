@@ -2,6 +2,10 @@
 
 | Module | Purpose |
 | --- | --- |
-| [modules/core-guidance.md](modules/core-guidance.md) | Legacy guidance captured prior to fresh research. Review and update after validation. |
+| [modules/recipe-to-wine-profile.md](modules/recipe-to-wine-profile.md) | Convert recipe analysis into grape, origin, region, and wine-style search criteria. |
+| [modules/pairing-tag-evaluator.md](modules/pairing-tag-evaluator.md) | Evaluate pairing quality from recipe tags and wine tags. |
+| [modules/wine-list-matching-schema.md](modules/wine-list-matching-schema.md) | Define future wine-list fields and matching priority. |
+| [modules/core-guidance.md](modules/core-guidance.md) | General sommelier guidance and domain principles. |
 | [modules/known-gaps.md](modules/known-gaps.md) | Track missing evidence, unresolved questions, and validation tasks. |
-| [modules/research-checklist.md](modules/research-checklist.md) | Required web research workflow before using this skill. |
+| [modules/research-checklist.md](modules/research-checklist.md) | Research workflow before upgrading claims or adding external wine data. |
+

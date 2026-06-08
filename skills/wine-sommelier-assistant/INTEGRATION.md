@@ -19,7 +19,10 @@ skills/wine-sommelier-assistant/integrated-skills/meal_planner
 
 ## 整合方式
 
-`wine-sommelier-assistant` 是这个项目的核心领域 skill，负责葡萄酒搭配、品鉴、产区和收藏知识。
+`wine-sommelier-assistant` 是这个项目的核心领域 skill，负责两件事：
+
+1. 根据 recipe 推荐可用于未来 wine list 搜索的葡萄品种、国家、产区、地区和风格标签。
+2. 根据 recipe 标签和 wine 标签判断 pairing 是否合适，并解释匹配点和冲突点。
 
 `integrated-skills` 目录里的 skill 作为辅助能力：
 
@@ -27,6 +30,12 @@ skills/wine-sommelier-assistant/integrated-skills/meal_planner
 - `recipe-generator`：当 recipe 不完整时，可用于补全或生成标准菜谱。
 - `nutrition-analyzer`：当 pairing 需要考虑营养、热量、健康目标时，可作为后续扩展。
 - `meal_planner`：当需求从单道菜扩展到一周菜单或多餐搭配时，可作为后续扩展。
+
+新增核心模块：
+
+- `modules/recipe-to-wine-profile.md`：把 recipe 转成葡萄品种、产地、产区和 wine style tags。
+- `modules/pairing-tag-evaluator.md`：通过 recipe tags 和 wine tags 计算 pairing quality。
+- `modules/wine-list-matching-schema.md`：定义未来 wine list 应该提供的字段和匹配优先级。
 
 当前代码运行时并不会自动执行这些 skill 文件。它们被放进项目内，是为了让 agent 的领域知识、后续扩展依据和可审查材料都跟随仓库版本管理。
 
