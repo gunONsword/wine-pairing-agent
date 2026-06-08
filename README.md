@@ -209,6 +209,24 @@ cd C:\Users\gos\project\wine-pairing-agent
 C:\Users\gos\project\.agents\skills
 ```
 
+同时，和本项目相关的 skills 已经复制进当前仓库，核心整合目录是：
+
+```text
+skills/wine-sommelier-assistant
+```
+
+其中 `wine-sommelier-assistant` 是核心 sommelier skill，其他辅助 skills 放在：
+
+```text
+skills/wine-sommelier-assistant/integrated-skills
+```
+
+项目内整合说明见：
+
+```text
+skills/wine-sommelier-assistant/INTEGRATION.md
+```
+
 和本项目最相关的 skills：
 
 | Skill | 来源 | 作用 | 当前项目中的定位 |
