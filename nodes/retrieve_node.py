@@ -5,5 +5,5 @@ from graph.state import AgentState
 
 
 def retrieve_candidates(state: AgentState) -> AgentState:
-    return {"candidates": candidate_wines(state["profile"])}
+    return {"candidates": candidate_wines(state["profile"], state["skill_selection"].name)}
 

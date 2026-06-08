@@ -28,3 +28,16 @@ def test_rich_beef_gets_syrah() -> None:
     wines = candidate_wines(profile)
 
     assert any(wine.name == "Syrah" for wine in wines)
+
+
+def test_international_skill_adds_aromatic_whites() -> None:
+    profile = RecipeProfile(
+        title="Mapo tofu",
+        main_ingredients=["tofu", "pork", "chili bean paste"],
+        flavor_notes=["Sichuan", "hot"],
+        spice="hot",
+    )
+
+    wines = candidate_wines(profile, "wine-pairing-cuisine-international")
+
+    assert any(wine.name == "Gewurztraminer" for wine in wines)

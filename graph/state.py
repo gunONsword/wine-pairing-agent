@@ -26,6 +26,14 @@ class WineCandidate(BaseModel):
     serving_note: str
 
 
+class PairingSkillSelection(BaseModel):
+    name: str
+    path: str
+    reason: str
+    supporting_skills: list[str] = Field(default_factory=list)
+    context: str = ""
+
+
 class PairingRecommendation(BaseModel):
     recipe_summary: str
     top_pick: WineCandidate
@@ -59,6 +67,7 @@ class PairingRecommendation(BaseModel):
 class AgentState(TypedDict, total=False):
     recipe: str
     profile: RecipeProfile
+    skill_selection: PairingSkillSelection
     candidates: list[WineCandidate]
     recommendation: PairingRecommendation
     evaluation: dict[str, object]

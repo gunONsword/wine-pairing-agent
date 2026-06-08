@@ -5,6 +5,7 @@ from graph.state import AgentState
 
 def format_output(state: AgentState) -> AgentState:
     recommendation = state["recommendation"]
+    skill_selection = state["skill_selection"]
     top = recommendation.top_pick
     alternatives = "\n".join(f"- {wine.name}: {wine.why_it_might_work}" for wine in recommendation.alternatives)
     avoid = "\n".join(f"- {item}" for item in recommendation.avoid) or "- None"
@@ -18,6 +19,10 @@ Style: {top.style}
 Grapes: {", ".join(top.grapes) or "varies"}
 Regions to look for: {", ".join(top.region_examples) or "many regions"}
 Serving: {top.serving_note}
+
+Skill workflow: recipe analysis -> {skill_selection.name}
+Skill path: {skill_selection.path}
+Skill reason: {skill_selection.reason}
 
 1 风味分析
 {recommendation.flavor_analysis or recommendation.recipe_summary}
