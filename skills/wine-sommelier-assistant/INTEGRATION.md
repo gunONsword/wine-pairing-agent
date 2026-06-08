@@ -17,6 +17,15 @@ skills/wine-sommelier-assistant/integrated-skills/nutrition-analyzer
 skills/wine-sommelier-assistant/integrated-skills/meal_planner
 ```
 
+Pairing principle skills：
+
+```text
+skills/wine-pairing-multilang/SKILL.md
+skills/wine-pairing-en/SKILL.md
+skills/packages/wine-pairing-multilang.skill
+skills/packages/wine-pairing-en.skill
+```
+
 ## 整合方式
 
 `wine-sommelier-assistant` 是这个项目的核心领域 skill，负责两件事：
@@ -36,6 +45,12 @@ skills/wine-sommelier-assistant/integrated-skills/meal_planner
 - `modules/recipe-to-wine-profile.md`：把 recipe 转成葡萄品种、产地、产区和 wine style tags。
 - `modules/pairing-tag-evaluator.md`：通过 recipe tags 和 wine tags 计算 pairing quality。
 - `modules/wine-list-matching-schema.md`：定义未来 wine list 应该提供的字段和匹配优先级。
+
+新增 pairing 原则库：
+
+- `skills/wine-pairing-multilang/SKILL.md`：多语言原文版 food-wine pairing 抽象原则，适合保留原语言术语和地域搭配语感。
+- `skills/wine-pairing-en/SKILL.md`：英文翻译版 food-wine pairing 抽象原则，适合 agent 统一理解和生成英文解释。
+- `skills/packages/*.skill`：对应的可分享、可重装压缩包。
 
 当前代码运行时并不会自动执行这些 skill 文件。它们被放进项目内，是为了让 agent 的领域知识、后续扩展依据和可审查材料都跟随仓库版本管理。
 

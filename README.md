@@ -136,6 +136,9 @@ wine-pairing-agent/
     postgres_memory.py
   skills/
     wine-sommelier-assistant/
+    wine-pairing-multilang/
+    wine-pairing-en/
+    packages/
   tests/
     test_wine_rules.py
 ```
@@ -156,6 +159,9 @@ wine-pairing-agent/
 - `prompts/recommendation_prompt.py`：葡萄酒推荐 prompt。
 - `services/llm_service.py`：封装 MiniMax LLM 调用和 JSON 解析。
 - `skills/wine-sommelier-assistant/`：项目内整合的 sommelier skill bundle。
+- `skills/wine-pairing-multilang/`：多语言原文版 wine pairing 原则 skill，可被 agent 直接加载。
+- `skills/wine-pairing-en/`：英文翻译版 wine pairing 原则 skill，可被 agent 直接加载。
+- `skills/packages/`：可分享或重装的 `.skill` 压缩包。
 - `tests/test_wine_rules.py`：基础规则测试。
 
 ## 预留文件说明
@@ -296,6 +302,15 @@ skills/wine-sommelier-assistant/integrated-skills
 skills/wine-sommelier-assistant/INTEGRATION.md
 ```
 
+另外，这次新增的 wine pairing 原则 skills 已经放在：
+
+```text
+skills/wine-pairing-multilang/SKILL.md
+skills/wine-pairing-en/SKILL.md
+skills/packages/wine-pairing-multilang.skill
+skills/packages/wine-pairing-en.skill
+```
+
 和本项目最相关的 skills：
 
 | Skill | 来源 | 作用 | 当前项目中的定位 |
@@ -305,6 +320,8 @@ skills/wine-sommelier-assistant/INTEGRATION.md
 | `recipe-generator` | `cclank/recipe-generator` 与 `ayia/NutriProfile` | 生成或管理菜谱内容 | 后续可用于补全 recipe 或生成标准菜谱 |
 | `nutrition-analyzer` | `ayia/NutriProfile` | 食物识别、营养分析、热量和宏量营养估算 | 后续可扩展为“健康饮食 + wine pairing” |
 | `meal_planner` | `arunrlverma/openclaw-skills` | 膳食计划相关 | 后续可扩展到一周菜单和配酒 |
+| `wine-pairing-multilang` | `.skill` 包导入 | 多语言原文版 food-wine pairing 原则库 | 作为 pairing 规则和解释依据 |
+| `wine-pairing-en` | `.skill` 包导入 | 英文版 food-wine pairing 原则库 | 作为英文可读的 pairing 规则和解释依据 |
 
 已经尝试但未成功安装：
 
