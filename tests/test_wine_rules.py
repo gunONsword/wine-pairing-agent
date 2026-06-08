@@ -41,3 +41,42 @@ def test_international_skill_adds_aromatic_whites() -> None:
     wines = candidate_wines(profile, "wine-pairing-cuisine-international")
 
     assert any(wine.name == "Gewurztraminer" for wine in wines)
+
+
+def test_oily_recipe_gets_sparkling_wine() -> None:
+    profile = RecipeProfile(
+        title="Tempura",
+        main_ingredients=["shrimp", "vegetables"],
+        cooking_methods=["fried"],
+        oiliness="high",
+    )
+
+    wines = candidate_wines(profile)
+
+    assert any(wine.name == "Brut Sparkling Wine" for wine in wines)
+
+
+def test_viscous_recipe_gets_chardonnay() -> None:
+    profile = RecipeProfile(
+        title="Cream stew",
+        main_ingredients=["chicken", "cream"],
+        cooking_methods=["stewed"],
+        viscosity="high",
+    )
+
+    wines = candidate_wines(profile)
+
+    assert any(wine.name == "Chardonnay" for wine in wines)
+
+
+def test_hard_texture_recipe_gets_syrah() -> None:
+    profile = RecipeProfile(
+        title="Chewy grilled lamb",
+        main_ingredients=["lamb"],
+        cooking_methods=["grilled"],
+        hardness="high",
+    )
+
+    wines = candidate_wines(profile)
+
+    assert any(wine.name == "Syrah" for wine in wines)
