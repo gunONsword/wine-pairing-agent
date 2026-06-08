@@ -1,0 +1,2 @@
+"""Reserved VAE encoder placeholder."""
+

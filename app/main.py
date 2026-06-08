@@ -3,7 +3,7 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from wine_pairing_agent.graph import recommend_wine
+from graph.workflow import recommend_wine
 
 
 def parse_args() -> argparse.Namespace:

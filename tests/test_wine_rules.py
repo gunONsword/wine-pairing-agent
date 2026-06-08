@@ -1,5 +1,5 @@
-from wine_pairing_agent.models import RecipeProfile
-from wine_pairing_agent.wine_rules import candidate_wines
+from agents.sommelier_agent import candidate_wines
+from graph.state import RecipeProfile
 
 
 def test_spicy_recipe_gets_off_dry_riesling() -> None:
@@ -28,4 +28,3 @@ def test_rich_beef_gets_syrah() -> None:
     wines = candidate_wines(profile)
 
     assert any(wine.name == "Syrah" for wine in wines)
-

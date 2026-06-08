@@ -1,0 +1,2 @@
+"""Reserved Postgres memory adapter."""
+

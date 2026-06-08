@@ -7,7 +7,7 @@ from typing import TypeVar
 from langchain_openai import ChatOpenAI
 from pydantic import BaseModel
 
-from wine_pairing_agent.config import Settings, get_settings
+from app.config import Settings, get_settings
 
 
 T = TypeVar("T", bound=BaseModel)
@@ -47,3 +47,4 @@ def _extract_json_object(content: str) -> dict:
         return json.loads(content[start : end + 1])
 
     raise ValueError(f"LLM response did not contain JSON: {content[:300]}")
+

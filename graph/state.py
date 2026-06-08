@@ -57,4 +57,6 @@ class AgentState(TypedDict, total=False):
     profile: RecipeProfile
     candidates: list[WineCandidate]
     recommendation: PairingRecommendation
+    evaluation: dict[str, object]
     answer: str
+

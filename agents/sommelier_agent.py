@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from wine_pairing_agent.models import RecipeProfile, WineCandidate
+from graph.state import RecipeProfile, WineCandidate
 
 
 def candidate_wines(profile: RecipeProfile) -> list[WineCandidate]:
@@ -63,7 +63,7 @@ def candidate_wines(profile: RecipeProfile) -> list[WineCandidate]:
                 grapes=["Syrah", "Shiraz"],
                 region_examples=["Northern Rhone", "Barossa", "Washington State"],
                 why_it_might_work="Dark fruit and pepper match roasted or braised intensity, and tannin handles red meat.",
-                serving_note="Serve around 15-17 C; decant young bottles.",
+                serving_note="Serve around 15-17 C.; decant young bottles.",
             )
         )
 

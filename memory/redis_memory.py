@@ -1,0 +1,2 @@
+"""Reserved Redis memory adapter."""
+

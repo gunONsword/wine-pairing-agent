@@ -34,16 +34,16 @@ skills/wine-sommelier-assistant/integrated-skills/meal_planner
 
 ```text
 LangGraph agent
-  -> src/wine_pairing_agent/graph.py
+  -> graph/workflow.py
 
 MiniMax 调用
-  -> src/wine_pairing_agent/llm.py
+  -> services/llm_service.py
 
 菜品结构化模型
-  -> src/wine_pairing_agent/models.py
+  -> graph/state.py
 
 本地候选酒规则
-  -> src/wine_pairing_agent/wine_rules.py
+  -> agents/sommelier_agent.py
 
 领域 skill bundle
   -> skills/wine-sommelier-assistant/
@@ -64,4 +64,3 @@ nutrition_context_node
 meal_plan_pairing_node
   -> 当用户请求多餐或一周菜单时批量生成 pairing
 ```
-

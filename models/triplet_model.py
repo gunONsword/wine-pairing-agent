@@ -1,0 +1,2 @@
+"""Reserved triplet model placeholder."""
+

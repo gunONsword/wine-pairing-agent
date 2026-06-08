@@ -5,11 +5,11 @@ from dataclasses import dataclass
 from pathlib import Path
 
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 
 def load_dotenv(path: Path | None = None) -> None:
-    """Tiny .env loader to avoid adding another dependency."""
+    """Load simple KEY=VALUE pairs without adding a dotenv dependency."""
     env_path = path or PROJECT_ROOT / ".env"
     if not env_path.exists():
         return
@@ -34,8 +34,10 @@ def get_settings() -> Settings:
     api_key = os.getenv("MINIMAX_API_KEY", "")
     if not api_key:
         raise RuntimeError("MINIMAX_API_KEY is required. Put it in .env or set it in the shell.")
+
     return Settings(
         minimax_api_key=api_key,
         minimax_base_url=os.getenv("MINIMAX_BASE_URL", "https://api.minimax.io/v1"),
         minimax_model=os.getenv("MINIMAX_MODEL", "MiniMax-M3"),
     )
+

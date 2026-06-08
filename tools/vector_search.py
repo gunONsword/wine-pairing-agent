@@ -1,0 +1,2 @@
+"""Reserved vector search tool."""
+
