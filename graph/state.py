@@ -15,6 +15,9 @@ class RecipeProfile(BaseModel):
     sweetness: Literal["low", "medium", "high"] = "low"
     fat: Literal["low", "medium", "high"] = "medium"
     spice: Literal["none", "mild", "hot"] = "none"
+    viscosity: Literal["low", "medium", "high"] = "medium"
+    oiliness: Literal["low", "medium", "high"] = "medium"
+    hardness: Literal["low", "medium", "high"] = "medium"
 
 
 class WineCandidate(BaseModel):

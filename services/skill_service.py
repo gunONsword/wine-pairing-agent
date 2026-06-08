@@ -176,6 +176,9 @@ def _profile_text(profile: RecipeProfile, recipe: str) -> str:
         profile.sweetness,
         profile.fat,
         profile.spice,
+        profile.viscosity,
+        profile.oiliness,
+        profile.hardness,
     ]
     return " ".join(parts).lower()
 

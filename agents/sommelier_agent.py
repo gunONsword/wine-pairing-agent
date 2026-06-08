@@ -31,7 +31,11 @@ def candidate_wines(profile: RecipeProfile, skill_name: str | None = None) -> li
             )
         )
 
-    if profile.fat == "high" or any(term in ingredients for term in ["cream", "butter", "cheese", "pork belly"]):
+    if (
+        profile.fat == "high"
+        or profile.viscosity == "high"
+        or any(term in ingredients for term in ["cream", "butter", "cheese", "pork belly"])
+    ):
         candidates.append(
             WineCandidate(
                 name="Chardonnay",
@@ -40,6 +44,18 @@ def candidate_wines(profile: RecipeProfile, skill_name: str | None = None) -> li
                 region_examples=["Burgundy", "Sonoma Coast", "Margaret River"],
                 why_it_might_work="Body and texture match richness, while enough acidity cuts butter, cream, or cheese.",
                 serving_note="Choose lightly oaked for balance; serve around 9-11 C.",
+            )
+        )
+
+    if profile.oiliness == "high" or any(term in ingredients for term in ["fried", "tempura", "oil", "greasy"]):
+        candidates.append(
+            WineCandidate(
+                name="Brut Sparkling Wine",
+                style="dry sparkling wine with high acidity and palate-cleansing bubbles",
+                grapes=["Chardonnay", "Pinot Noir", "Pinot Meunier"],
+                region_examples=["Champagne", "Cava", "Franciacorta"],
+                why_it_might_work="Bubbles and high acidity cut oiliness and reset the palate between rich bites.",
+                serving_note="Serve well chilled, around 6-8 C.",
             )
         )
 
@@ -55,7 +71,11 @@ def candidate_wines(profile: RecipeProfile, skill_name: str | None = None) -> li
             )
         )
 
-    if profile.intensity == "rich" or any(term in ingredients for term in ["beef", "lamb", "braised", "stew", "roast"]):
+    if (
+        profile.intensity == "rich"
+        or profile.hardness == "high"
+        or any(term in ingredients for term in ["beef", "lamb", "braised", "stew", "roast"])
+    ):
         candidates.append(
             WineCandidate(
                 name="Syrah",
