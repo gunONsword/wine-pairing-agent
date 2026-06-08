@@ -7,5 +7,3 @@
 | [modules/wine-list-matching-schema.md](modules/wine-list-matching-schema.md) | Define future wine-list fields and matching priority. |
 | [modules/core-guidance.md](modules/core-guidance.md) | General sommelier guidance and domain principles. |
 | [modules/known-gaps.md](modules/known-gaps.md) | Track missing evidence, unresolved questions, and validation tasks. |
-| [modules/research-checklist.md](modules/research-checklist.md) | Research workflow before upgrading claims or adding external wine data. |
-

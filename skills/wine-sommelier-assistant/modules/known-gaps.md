@@ -1,14 +1,14 @@
-# Known Gaps & Validation Tasks
+# Known Gaps
 
-## Critical gaps
-- ❌ Fresh web research has not been captured after the Oct 2024 training cutoff.
-- ❌ Authoritative sources are missing from `metadata.sources`.
-- ❌ Domain expert review pending.
+This project does not require a separate research workflow for normal use.
 
-## TODOs
-1. Complete the research checklist and archive dated sources.
-2. Update `modules/core-guidance.md` with verified guidance and confidence markers.
-3. Adjust `metadata.confidence` once validation is complete.
+Current gaps are engineering and data gaps:
 
-## Notes
-- Add additional items here as you uncover domain-specific gaps.
+1. No real wine-list database is connected yet.
+2. Wine-list matching currently depends on structured tags being available.
+3. Recipe analysis is text-based; image or scanned recipe parsing is not implemented.
+4. Pairing scoring is rule-guided and LLM-assisted, not calibrated against a human-rated dataset.
+5. User preferences such as budget, color preference, country preference, and inventory are not yet persisted.
+
+These gaps should be solved by adding tools, data, memory, and evaluation tests rather than by adding a mandatory research step.
+

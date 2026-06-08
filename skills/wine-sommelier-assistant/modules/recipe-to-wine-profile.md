@@ -1,6 +1,6 @@
 # Recipe To Wine Search Profile
 
-Use this module to turn a recipe into wine-search criteria.
+Use this module to turn recipe-analysis results into wine-list search criteria.
 
 ## Recipe Tags To Extract
 
@@ -38,9 +38,12 @@ Output these fields for future wine-list matching:
     "aromatic_profile": []
   },
   "avoid_style_tags": [],
+  "wine_list_matches": [],
   "pairing_reason": ""
 }
 ```
+
+If a wine list is provided, use the wine search fields to rank real wines from that list. Do not stop at abstract grape or region recommendations when specific wine-list items are available.
 
 ## Grape And Region Guidelines
 
@@ -52,4 +55,3 @@ Output these fields for future wine-list matching:
 - Fresh herbs and green vegetables: Sauvignon Blanc, Gruner Veltliner, Vermentino. Search Sancerre, Marlborough, Wachau, Sardinia.
 
 Always explain why the recommended grape and region fit the recipe tags.
-

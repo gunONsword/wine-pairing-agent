@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-import unicodedata
-
 from graph.state import AgentState
 
 
@@ -21,7 +19,19 @@ Grapes: {", ".join(top.grapes) or "varies"}
 Regions to look for: {", ".join(top.region_examples) or "many regions"}
 Serving: {top.serving_note}
 
-Why it pairs:
+1 风味分析
+{recommendation.flavor_analysis or recommendation.recipe_summary}
+
+2 单宁
+{recommendation.tannin or "Prefer tannin that does not clash with the dish structure."}
+
+3 酸度
+{recommendation.acidity or "Choose acidity that balances the dish's fat, sauce, and freshness."}
+
+4 酒体
+{recommendation.body or "Match wine body to the dish intensity."}
+
+5 Pairing理由
 {recommendation.pairing_reason}
 
 Alternatives:
@@ -30,10 +40,10 @@ Alternatives:
 Avoid:
 {avoid}
 """
-    return {"answer": _plain_ascii(answer)}
+    return {"answer": _normalize_punctuation(answer)}
 
 
-def _plain_ascii(text: str) -> str:
+def _normalize_punctuation(text: str) -> str:
     replacements = {
         "\u2013": "-",
         "\u2014": "-",
@@ -44,5 +54,4 @@ def _plain_ascii(text: str) -> str:
     }
     for source, target in replacements.items():
         text = text.replace(source, target)
-    return unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode("ascii")
-
+    return text

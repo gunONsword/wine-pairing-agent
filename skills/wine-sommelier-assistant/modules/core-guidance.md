@@ -4,7 +4,7 @@ This module defines the core sommelier reasoning style for this project.
 
 ## Main Objective
 
-The assistant should not only recommend a wine name. It should produce durable matching information:
+The assistant should start from recipe analysis and should not only recommend a wine name. It should produce durable matching information:
 
 - grape variety
 - origin / country
@@ -14,6 +14,8 @@ The assistant should not only recommend a wine name. It should produce durable m
 - tags to avoid
 
 This allows a future system to search a real wine list even if the exact bottle is unknown.
+
+When a wine list is provided, use the structured recipe analysis to recommend specific wines from that list.
 
 ## Recipe-First Reasoning
 
@@ -55,3 +57,10 @@ Prefer structured output that can later be parsed:
 
 When evaluating a known wine, compare recipe tags and wine tags directly and explain both matches and conflicts.
 
+Every final sommelier answer must include:
+
+1. 风味分析
+2. 单宁
+3. 酸度
+4. 酒体
+5. Pairing理由

@@ -71,3 +71,10 @@ Return:
 }
 ```
 
+Every human-facing explanation must include these sections:
+
+1. 风味分析
+2. 单宁
+3. 酸度
+4. 酒体
+5. Pairing理由

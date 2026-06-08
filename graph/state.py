@@ -30,6 +30,10 @@ class PairingRecommendation(BaseModel):
     recipe_summary: str
     top_pick: WineCandidate
     alternatives: list[WineCandidate] = Field(default_factory=list)
+    flavor_analysis: str = ""
+    tannin: str = ""
+    acidity: str = ""
+    body: str = ""
     pairing_reason: str
     avoid: list[str] = Field(default_factory=list)
 
@@ -59,4 +63,3 @@ class AgentState(TypedDict, total=False):
     recommendation: PairingRecommendation
     evaluation: dict[str, object]
     answer: str
-
