@@ -3,7 +3,7 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from graph.workflow import recommend_wine
+from app.workflows.recommend_wine_graph import recommend_wine
 
 
 def parse_args() -> argparse.Namespace:
@@ -22,4 +22,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
